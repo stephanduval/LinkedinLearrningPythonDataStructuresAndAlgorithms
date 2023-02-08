@@ -20,7 +20,8 @@ def dfs(maze, start, goal):
             return get_path(predecessors, start, goal)
         for direction in ["up", "right", "down", "left"]:
             row_offset, col_offset = offsets[direction]
-            neighbour = (current_cell[0] + row_offset, current_cell[1] + col_offset)
+            neighbour = (current_cell[0] + row_offset,
+                         current_cell[1] + col_offset)
             if is_legal_pos(maze, neighbour) and neighbour not in predecessors:
                 stack.push(neighbour)
                 predecessors[neighbour] = current_cell
